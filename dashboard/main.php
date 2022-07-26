@@ -1,4 +1,15 @@
 <?php 
+session_start();
+
+if (!isset($_SESSION['masuk'])) {
+  ?>
+  <script type="text/javascript">
+    alert('anda belum login!')
+    document.location.href="../login.php";
+  </script>
+  <?php
+}
+
 include 'function.php';
 $connection = conn();
 
@@ -76,7 +87,7 @@ foreach ($kategoris as $key => $kategori) {
             <li class="nav-item d-flex align-items-center">
               <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
                 <i class="bi bi-person-circle"></i>
-                <span class="d-sm-inline d-none">Aslam Mardin</span>
+                <span class="d-sm-inline d-none"><?= $_SESSION['nama'] ?></span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -91,6 +102,11 @@ foreach ($kategoris as $key => $kategori) {
             <li class="nav-item px-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0">
                 <i class="bi bi-person-lines-fill fixed-plugin-button-nav cursor-pointer"></i>
+              </a>
+            </li>
+            <li class="nav-item px-3 d-flex align-items-center">
+              <a href="../keluar.php" onclick="return confirm('anda ingin keluar ?')" class="nav-link text-body p-0">
+                <i class="bi bi-door-open-fill"></i>
               </a>
             </li>
             

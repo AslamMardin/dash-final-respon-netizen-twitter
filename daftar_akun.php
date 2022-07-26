@@ -1,3 +1,21 @@
+<?php 
+session_start();
+
+if ((isset($_SESSION['masuk'])) && $_SESSION['masuk'] == "true") {
+  header('Location:dashboard/main.php?page=dashboard');
+}
+function pesan($pesan ="", $type = "danger")
+{
+  ?>
+  <div class="alert alert-<?= $type ?> alert-dismissible text-white" role="alert">
+    <span class="text-sm"><?= $pesan ?>.</span>
+    <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <?php
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,18 +26,18 @@
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <title>
    Sistem Informasi Monitoring Respon Netizen Berbasis Web
-  </title>
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-  <!-- Nucleo Icons -->
-  <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-  <!-- CSS Files -->
-  <link id="pagestyle" href="assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
+ </title>
+ <!--     Fonts and icons     -->
+ <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+ <!-- Nucleo Icons -->
+ <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
+ <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
+ <!-- Font Awesome Icons -->
+ <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+ <!-- Material Icons -->
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+ <!-- CSS Files -->
+ <link id="pagestyle" href="assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -39,56 +57,84 @@
                   <p class="mb-0">Masukan Email dan Kata Sandi Kamu</p>
                 </div>
                 <div class="card-body">
-                  <form role="form">
+                  <form role="form" method="post" class="mb-2">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Nama Lengka</label>
-                      <input type="text" class="form-control">
+                      <input type="text" name="nama" class="form-control" value="<?= isset($_POST['nama']) ? $_POST['nama'] : "" ?>">
                     </div>
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Email</label>
-                      <input type="email" class="form-control">
+                      <input type="email" name="email" class="form-control" value="<?= isset($_POST['email']) ? $_POST['email'] : "" ?>">
                     </div>
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Kata Sandi</label>
-                      <input type="password" class="form-control">
+                      <input type="password" name="sandi" class="form-control">
                     </div>
                     
                     <div class="text-center">
-                      <button type="button" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Sign Up</button>
+                      <button type="submit" name="btn" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Daftar</button>
                     </div>
                   </form>
-                </div>
-                <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                  <p class="mb-2 text-sm mx-auto">
-                   Kamu Sudah Punya Akun?
-                    <a href="../pages/sign-in.html" class="text-primary text-gradient font-weight-bold">Login Sekarang</a>
-                  </p>
-                </div>
+
+                  <?php 
+                  $conn = mysqli_connect('localhost', 'root', '', 'api-twitter');
+                  if (!$conn) {
+                   pesan("Maaf Koneksi Sedang Bermasalah");
+                 }
+
+                 if (isset($_POST['btn'])) {
+                   // code...
+                  if (empty($_POST['nama']) || empty($_POST['email']) || empty($_POST['sandi'])) {
+                    pesan("Harap Semua Di isi!", "danger");
+                  }else {
+                   $q = "SELECT * FROM users where email='".$_POST['email']."'";
+                   $hasil = mysqli_query($conn, $q);
+                   if (mysqli_num_rows($hasil) > 0) {
+                     pesan("Email sudah Terdaftar");
+                   }else {
+                    $psswd_hash = password_hash($_POST['sandi'], PASSWORD_DEFAULT);
+                     $q = "INSERT INTO users (nama,email,sandi) values('".$_POST['nama']."', '".$_POST['email']."', '".$psswd_hash."')";
+                      $hasil = mysqli_query($conn, $q);
+                      if ($hasil) {
+                        setcookie('pesan', 'Akun Anda telah Terdaftar', time() + 5);
+                        header('Location:login.php');
+                      }
+                    }
+                  }
+                }
+                ?>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+              <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                <p class="mb-2 text-sm mx-auto">
+                 Kamu Sudah Punya Akun?
+                 <a href="login.php" class="text-primary text-gradient font-weight-bold">Login Sekarang</a>
+               </p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+</main>
+<!--   Core JS Files   -->
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
+<script>
+  var win = navigator.platform.indexOf('Win') > -1;
+  if (win && document.querySelector('#sidenav-scrollbar')) {
+    var options = {
+      damping: '0.5'
     }
-  </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="assets/js/material-dashboard.min.js?v=3.0.4"></script>
+    Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+  }
+</script>
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="assets/js/material-dashboard.min.js?v=3.0.4"></script>
 </body>
 
 </html>
