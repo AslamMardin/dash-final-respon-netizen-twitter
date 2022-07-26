@@ -44,7 +44,7 @@ $tweets = myGet("statuses/user_timeline", [
     <!-- Sidenav Type -->
     <hr>
     <ul class="list-group">
-      <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">ID:</strong> &nbsp; ?= $profile->id_str ?></li>
+      <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">ID:</strong> &nbsp; <?= $profile->id_str ?></li>
       <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nama Asli:</strong> &nbsp; <?= $profile->name ?></li>
       <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Alamat:</strong> &nbsp; <?= $profile->location ?></li>
     

@@ -143,11 +143,35 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
 </div>
 </div>
 </div>
+
+<div class="card mt-4">
+  <div class="card-header p-3">
+    <h5 class="mb-0">Informasi</h5>
+    <p class="text-sm mb-0">
+      Aplikasi ini hanya berkaitan dengan kata kunci dibawah ini!.
+    </p>
+  </div>
+  <div class="card-body p-3">
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 col-12">
+        <button class="btn bg-gradient-success w-100 mb-0 toast-btn" type="button" data-target="successToast">Sulawesi Barat</button>
+      </div>
+      <div class="col-lg-4 col-sm-6 col-12 mt-sm-0 mt-2">
+        <button class="btn bg-gradient-info w-100 mb-0 toast-btn" type="button" data-target="infoToast">Unasman</button>
+      </div>
+      <div class="col-lg-4 col-sm-6 col-12 mt-lg-0 mt-2">
+        <button class="btn bg-gradient-warning w-100 mb-0 toast-btn" type="button" data-target="warningToast">polewali</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="row mt-4">
   <div class="col-lg-6 col-md-6 mt-4 mb-4">
     <div class="card z-index-2 ">
       <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
-        <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+        <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
           <div class="chart">
             <canvas id="chart-unasman" class="chart-canvas" height="340"></canvas>
           </div>
@@ -193,8 +217,8 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
         <div id="table-unasman"></div>
         <hr class="dark horizontal">
         <div class="d-flex ">
-          <i class="material-icons text-sm my-auto me-1">schedule</i>
-          <p class="mb-0 text-sm"> Data Minggu Lalu </p>
+          <i class="bi bi-card-list text-sm my-auto me-1"></i>
+          <p class="mb-0 text-sm"> Unasman </p>
         </div>
       </div>
     </div>
@@ -202,7 +226,7 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
   <div class="col-lg-6 col-md-6 mt-4 mb-4">
     <div class="card z-index-2  ">
       <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
-        <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
+        <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
           <div class="chart">
             <canvas id="chart-sulbar" class="chart-canvas" height="340"></canvas>
           </div>
@@ -247,13 +271,13 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
 
       <hr class="dark horizontal">
       <div class="d-flex ">
-        <i class="material-icons text-sm my-auto me-1">schedule</i>
-        <p class="mb-0 text-sm"> Data Minggu Lalu </p>
+       <i class="bi bi-card-list text-sm my-auto me-1"></i>
+          <p class="mb-0 text-sm"> Sulawesi Barat </p>
       </div>
     </div>
   </div>
 </div>
-<div class="col-lg-6 mt-4 mb-3">
+<div class="col-lg-6 col-md-6 mt-4 mb-3">
   <div class="card z-index-2 ">
     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
       <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
@@ -301,8 +325,8 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
 
     <hr class="dark horizontal">
     <div class="d-flex ">
-      <i class="material-icons text-sm my-auto me-1">schedule</i>
-      <p class="mb-0 text-sm">Data Minggu Lalu</p>
+     <i class="bi bi-card-list text-sm my-auto me-1"></i>
+          <p class="mb-0 text-sm"> Polewali Mandar </p>
     </div>
   </div>
 </div>

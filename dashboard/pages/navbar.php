@@ -22,7 +22,7 @@
         <li class="nav-item">
           <a class="nav-link text-white <?= ($_GET['page'] == "unasman") ? "active  bg-gradient-primary" : "" ?> " href="main.php?page=unasman">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-             <i class="bi bi-pin"></i>
+        <i class="bi bi-bookmark-fill"></i>
             </div>
             <span class="nav-link-text ms-1">Unasman</span>
           </a>
@@ -30,7 +30,7 @@
          <li class="nav-item">
           <a class="nav-link text-white <?= ($_GET['page'] == "polewali") ? "active  bg-gradient-primary" : "" ?>" href="main.php?page=polewali">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="bi bi-pin"></i>
+             <i class="bi bi-bookmark-fill"></i>
             </div>
             <span class="nav-link-text ms-1">Polewali</span>
           </a>
@@ -38,10 +38,25 @@
         <li class="nav-item">
           <a class="nav-link text-white <?= ($_GET['page'] == "sulbar") ? "active  bg-gradient-primary" : "" ?>" href="main.php?page=sulbar">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-             <i class="bi bi-pin"></i>
+             <i class="bi bi-bookmark-fill"></i>
             </div>
             <span class="nav-link-text ms-1">Sulbar</span>
           </a>
         </li>
+
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Himbuan</h6>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white <?= ($_GET['page'] == "kosakata") ? "active  bg-gradient-primary" : "" ?>" href="main.php?page=kosakata&role=positif">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+             <i class="bi bi-journals"></i>
+            </div>
+            <span class="nav-link-text ms-1">Kosa Kata</span>
+          </a>
+        </li>
+
+       
       </ul>
     </div>
