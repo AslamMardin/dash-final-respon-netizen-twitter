@@ -1,0 +1,9 @@
+https://twitteroauth.com/
+
+https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/overview
+
+https://developer.twitter.com/en/docs/twitter-api/v1/tweets/search/api-reference/get-search-tweets
+
+https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+
+https://getbootstrap.com/docs/5.2/components/card/#example
