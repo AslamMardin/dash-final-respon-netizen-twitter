@@ -47,7 +47,7 @@ $hitungSulbar = ['positif' => 0, 'negatif' => 0, 'netral' => 0];
                     </div>
                   </td>
                   <td>
-                    <div class="text-xs text-secondary mb-0" style=" width: 300px;word-break: break-all;
+                    <div class="text-xs text-secondary mb-0" style=" width: 450px;word-break: break-all;
                     white-space: normal;"><?= $item->text ?></div>
                   </td>
 

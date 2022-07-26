@@ -95,7 +95,7 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
       <div class="card-header p-3 pt-2">
         <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
           <i class="bi bi-wechat"></i>
-     
+
         </div>
         <div class="text-end pt-1">
           <p class="text-sm mb-0 text-capitalize">Respon Negatif</p>
@@ -112,28 +112,11 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
     <div class="card">
       <div class="card-header p-3 pt-2">
         <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-               <i class="bi bi-chat-left-heart-fill"></i>
-        </div>
-        <div class="text-end pt-1">
-          <p class="text-sm mb-0 text-capitalize">Respon Positif</p>
-          <h4 class="mb-0"><?= $totalPositif ?></h4>
-        </div>
-      </div>
-      <hr class="dark horizontal my-0">
-      <div class="card-footer p-3">
-
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-3 col-sm-6">
-    <div class="card">
-      <div class="card-header p-3 pt-2">
-        <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-         <i class="bi bi-chat-left"></i>
+         <i class="bi bi-chat-left-heart-fill"></i>
        </div>
        <div class="text-end pt-1">
-        <p class="text-sm mb-0 text-capitalize">Netral</p>
-        <h4 class="mb-0"><?= $totalNetral ?></h4>
+        <p class="text-sm mb-0 text-capitalize">Respon Positif</p>
+        <h4 class="mb-0"><?= $totalPositif ?></h4>
       </div>
     </div>
     <hr class="dark horizontal my-0">
@@ -141,6 +124,23 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
 
     </div>
   </div>
+</div>
+<div class="col-xl-3 col-sm-6">
+  <div class="card">
+    <div class="card-header p-3 pt-2">
+      <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+       <i class="bi bi-chat-left"></i>
+     </div>
+     <div class="text-end pt-1">
+      <p class="text-sm mb-0 text-capitalize">Netral</p>
+      <h4 class="mb-0"><?= $totalNetral ?></h4>
+    </div>
+  </div>
+  <hr class="dark horizontal my-0">
+  <div class="card-footer p-3">
+
+  </div>
+</div>
 </div>
 </div>
 <div class="row mt-4">
@@ -154,7 +154,7 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
         </div>
       </div>
       <div class="card-body">
-        
+
         <table class="table table-hover" style="font-size: 11px;">
           <thead>
             <tr align="center">
@@ -172,8 +172,25 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
           </tbody>       
         </table>
 
-        <h6 class="mb-0 ">Detail Unasman</h6>
-         <div id="table-unasman"></div>
+        <div class="d-flex align-items-center justify-content-start gap-2">
+          <h6 class="mb-0 ">Daftar Tweet</h6>
+          <div class="avatar-group mt-2">
+            <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+              <img alt="Image placeholder" src="../assets/img/team-1.jpg">
+            </a>
+            <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+              <img alt="Image placeholder" src="../assets/img/team-2.jpg">
+            </a>
+            <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nick Daniel">
+              <img alt="Image placeholder" src="../assets/img/team-3.jpg">
+            </a>
+            <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Peterson">
+              <img alt="Image placeholder" src="../assets/img/team-4.jpg">
+            </a>
+          </div>
+        </div>
+
+        <div id="table-unasman"></div>
         <hr class="dark horizontal">
         <div class="d-flex ">
           <i class="material-icons text-sm my-auto me-1">schedule</i>
@@ -192,72 +209,104 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
         </div>
       </div>
       <div class="card-body">
-        
-         <table class="table table-hover" style="font-size: 11px;">
-          <thead>
-            <tr align="center">
-              <th>Positif</th>
-              <th>Netral</th>
-              <th>Negatif</th>
-            </tr>
-          </thead>   
-          <tbody>
-            <tr align="center">
-              <td><?= $hitungSulbar['positif'] ?></td>
-              <td><?= $hitungSulbar['netral'] ?></td>
-              <td><?= $hitungSulbar['negatif'] ?></td>
-            </tr>
-          </tbody>       
-        </table>
-        <h6 class="mb-0 "> Diagram Sulbar </h6>
-         <div id="table-sulbar"></div>
 
-        <hr class="dark horizontal">
-        <div class="d-flex ">
-          <i class="material-icons text-sm my-auto me-1">schedule</i>
-          <p class="mb-0 text-sm"> Data Minggu Lalu </p>
+       <table class="table table-hover" style="font-size: 11px;">
+        <thead>
+          <tr align="center">
+            <th>Positif</th>
+            <th>Netral</th>
+            <th>Negatif</th>
+          </tr>
+        </thead>   
+        <tbody>
+          <tr align="center">
+            <td><?= $hitungSulbar['positif'] ?></td>
+            <td><?= $hitungSulbar['netral'] ?></td>
+            <td><?= $hitungSulbar['negatif'] ?></td>
+          </tr>
+        </tbody>       
+      </table>
+      <div class="d-flex align-items-center justify-content-start gap-2">
+        <h6 class="mb-0 "> Daftar Tweet</h6>
+        <div class="avatar-group mt-2">
+          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+            <img alt="Image placeholder" src="../assets/img/team-1.jpg">
+          </a>
+          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+            <img alt="Image placeholder" src="../assets/img/team-2.jpg">
+          </a>
+          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nick Daniel">
+            <img alt="Image placeholder" src="../assets/img/team-3.jpg">
+          </a>
+          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Peterson">
+            <img alt="Image placeholder" src="../assets/img/team-4.jpg">
+          </a>
         </div>
+      </div>
+      <div id="table-sulbar"></div>
+
+      <hr class="dark horizontal">
+      <div class="d-flex ">
+        <i class="material-icons text-sm my-auto me-1">schedule</i>
+        <p class="mb-0 text-sm"> Data Minggu Lalu </p>
       </div>
     </div>
   </div>
-  <div class="col-lg-6 mt-4 mb-3">
-    <div class="card z-index-2 ">
-      <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
-        <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
-          <div class="chart">
-            <canvas id="chart-polewali" class="chart-canvas" height="340"></canvas>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        
-         <table class="table table-hover" style="font-size: 11px;">
-          <thead>
-            <tr align="center">
-              <th>Positif</th>
-              <th>Netral</th>
-              <th>Negatif</th>
-            </tr>
-          </thead>   
-          <tbody>
-            <tr align="center">
-              <td><?= $hitungPolewali['positif'] ?></td>
-              <td><?= $hitungPolewali['netral'] ?></td>
-              <td><?= $hitungPolewali['negatif'] ?></td>
-            </tr>
-          </tbody>       
-        </table>
-        <h6 class="mb-0 ">Diagram Polewali</h6>
-         <div id="table-polewali"></div>
-
-        <hr class="dark horizontal">
-        <div class="d-flex ">
-          <i class="material-icons text-sm my-auto me-1">schedule</i>
-          <p class="mb-0 text-sm">Data Minggu Lalu</p>
+</div>
+<div class="col-lg-6 mt-4 mb-3">
+  <div class="card z-index-2 ">
+    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+      <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
+        <div class="chart">
+          <canvas id="chart-polewali" class="chart-canvas" height="340"></canvas>
         </div>
       </div>
     </div>
+    <div class="card-body">
+
+     <table class="table table-hover" style="font-size: 11px;">
+      <thead>
+        <tr align="center">
+          <th>Positif</th>
+          <th>Netral</th>
+          <th>Negatif</th>
+        </tr>
+      </thead>   
+      <tbody>
+        <tr align="center">
+          <td><?= $hitungPolewali['positif'] ?></td>
+          <td><?= $hitungPolewali['netral'] ?></td>
+          <td><?= $hitungPolewali['negatif'] ?></td>
+        </tr>
+      </tbody>       
+    </table>
+    <div class="d-flex align-items-center justify-content-start gap-2">
+      <h6 class="mb-0 ">Daftar Tweet</h6>
+      <div class="avatar-group mt-2">
+        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+          <img alt="Image placeholder" src="../assets/img/team-1.jpg">
+        </a>
+        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+          <img alt="Image placeholder" src="../assets/img/team-2.jpg">
+        </a>
+        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nick Daniel">
+          <img alt="Image placeholder" src="../assets/img/team-3.jpg">
+        </a>
+        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Peterson">
+          <img alt="Image placeholder" src="../assets/img/team-4.jpg">
+        </a>
+      </div>
+    </div>
+    <div id="table-polewali"></div>
+
+    <hr class="dark horizontal">
+    <div class="d-flex ">
+      <i class="material-icons text-sm my-auto me-1">schedule</i>
+      <p class="mb-0 text-sm">Data Minggu Lalu</p>
+    </div>
   </div>
+</div>
+</div>
 </div>
 
 
