@@ -94,11 +94,12 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
     <div class="card">
       <div class="card-header p-3 pt-2">
         <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-          <i class="bi bi-chat-left-heart-fill"></i>
+          <i class="bi bi-wechat"></i>
+     
         </div>
         <div class="text-end pt-1">
-          <p class="text-sm mb-0 text-capitalize">Respon Positif</p>
-          <h4 class="mb-0"><?= $totalPositif ?></h4>
+          <p class="text-sm mb-0 text-capitalize">Respon Negatif</p>
+          <h4 class="mb-0"><?= $totalNegatif ?></h4>
         </div>
       </div>
       <hr class="dark horizontal my-0">
@@ -111,11 +112,11 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
     <div class="card">
       <div class="card-header p-3 pt-2">
         <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-          <i class="bi bi-wechat"></i>
+               <i class="bi bi-chat-left-heart-fill"></i>
         </div>
         <div class="text-end pt-1">
-          <p class="text-sm mb-0 text-capitalize">Respon Negatif</p>
-          <h4 class="mb-0"><?= $totalNegatif ?></h4>
+          <p class="text-sm mb-0 text-capitalize">Respon Positif</p>
+          <h4 class="mb-0"><?= $totalPositif ?></h4>
         </div>
       </div>
       <hr class="dark horizontal my-0">
@@ -153,7 +154,6 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
         </div>
       </div>
       <div class="card-body">
-        <h6 class="mb-0 ">Detail Unasman</h6>
         
         <table class="table table-hover" style="font-size: 11px;">
           <thead>
@@ -172,7 +172,8 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
           </tbody>       
         </table>
 
-
+        <h6 class="mb-0 ">Detail Unasman</h6>
+         <div id="table-unasman"></div>
         <hr class="dark horizontal">
         <div class="d-flex ">
           <i class="material-icons text-sm my-auto me-1">schedule</i>
@@ -191,7 +192,6 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
         </div>
       </div>
       <div class="card-body">
-        <h6 class="mb-0 "> Diagram Sulbar </h6>
         
          <table class="table table-hover" style="font-size: 11px;">
           <thead>
@@ -209,6 +209,8 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
             </tr>
           </tbody>       
         </table>
+        <h6 class="mb-0 "> Diagram Sulbar </h6>
+         <div id="table-sulbar"></div>
 
         <hr class="dark horizontal">
         <div class="d-flex ">
@@ -228,7 +230,6 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
         </div>
       </div>
       <div class="card-body">
-        <h6 class="mb-0 ">Diagram Polewali</h6>
         
          <table class="table table-hover" style="font-size: 11px;">
           <thead>
@@ -246,12 +247,33 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
             </tr>
           </tbody>       
         </table>
+        <h6 class="mb-0 ">Diagram Polewali</h6>
+         <div id="table-polewali"></div>
 
         <hr class="dark horizontal">
         <div class="d-flex ">
           <i class="material-icons text-sm my-auto me-1">schedule</i>
           <p class="mb-0 text-sm">Data Minggu Lalu</p>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalTweets" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9999;">
+  <div class="modal-dialog modal-lg modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Penelusuran Pada Tanggal : <span id="hasilTweet"></span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-tweet"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
