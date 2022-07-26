@@ -1,7 +1,6 @@
   <?php 
-  include_once 'lib/PHPInsight/Sentiment.php';
+  include_once '../lib/PHPInsight/Sentiment.php';
   $sentiment = new \PHPInsight\Sentiment();
- // var_dump($sentiment);
 
   $hitungUnasman = ['positif' => 0, 'negatif' => 0, 'netral' => 0];
   $hitungPolewali = ['positif' => 0, 'negatif' => 0, 'netral' => 0];
