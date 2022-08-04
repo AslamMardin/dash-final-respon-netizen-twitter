@@ -26,7 +26,6 @@ foreach ($apiTgl as $key => $tgl) {
   array_push($db, $tgl1);
 }
 $db = array_count_values($db);
-
 for ($tanggal=$mingguLalu; $tanggal <= $harisekarang ; $tanggal++) { 
     if(!array_key_exists($tanggal, $db)){
      $db[$tanggal] = 0;

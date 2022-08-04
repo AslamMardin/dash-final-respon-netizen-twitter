@@ -1,13 +1,13 @@
 <?php 
-if ($_GET['role'] = "positif" && $_GET['page'] == "kosakata") {
+if ($_GET['role'] == "positif") {
         // code...
   $file = "../lib/PHPInsight/dictionaries/source.positif.php"; 
-} else if($_GET['role'] = "negatif" && $_GET['page'] == "kosakata"){
+} else if($_GET['role'] == "negatif"){
   $file = "../lib/PHPInsight/dictionaries/source.negatif.php"; 
-}else if($_GET['role'] = "himbuan" && $_GET['page'] == "kosakata"){
+}else if($_GET['role'] == "himbuan"){
   $file = "../lib/PHPInsight/dictionaries/source.ignore.php"; 
 }
-else if($_GET['role'] = "netral" && $_GET['page'] == "kosakata"){
+else if($_GET['role'] == "netral"){
   $file = "../lib/PHPInsight/dictionaries/source.netral.php"; 
 }else {
   $file = "../lib/PHPInsight/dictionaries/source.prefix.php"; 

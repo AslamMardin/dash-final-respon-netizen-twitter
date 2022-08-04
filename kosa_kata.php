@@ -31,15 +31,15 @@
 
     <div class="container-fluid mt-3">
       <?php 
-      if ($_GET['page'] == "positif") {
+      if (($_GET['page'] == "kosakata") && ($_GET['role'] == "positif")) {
         // code...
         $file = "lib/PHPInsight/dictionaries/source.positif.php"; 
-      } else if($_GET['page'] == "negatif"){
+      } else if(($_GET['page'] == "kosakata") && ($_GET['role'] == "negatif")){
         $file = "lib/PHPInsight/dictionaries/source.negatif.php"; 
-      }else if($_GET['page'] == "himbuan"){
+      }else if(($_GET['page'] == "kosakata") && ($_GET['role'] == "himbuan")){
         $file = "lib/PHPInsight/dictionaries/source.ignore.php"; 
       }
-      else if($_GET['page'] == "netral"){
+      else if(($_GET['page'] == "kosakata") && ($_GET['role'] == "netral")){
         $file = "lib/PHPInsight/dictionaries/source.netral.php"; 
       }else {
         $file = "lib/PHPInsight/dictionaries/source.prefix.php"; 
@@ -47,6 +47,7 @@
       }
       $datas = file_get_contents($file);
       $datas = explode(",", $datas);
+      echo "string";
       ?>
       <table class="display table" id="myTable">
         <thead>
