@@ -80,7 +80,7 @@ function pesan($pesan ="", $type = "danger")
                   </div>
                   <p class="mt-4 text-sm text-center">
                     Kamu Tidak Punya Akun?
-                    <a href="daftar_akun.php" class="text-primary text-gradient font-weight-bold">Daftarkan Sekarang!</a>
+                    <a href="daftar_akun.php" class="text-primary text-gradient font-weight-bold">Daftar Sekarang!</a>
                   </p>
                 </form>
 

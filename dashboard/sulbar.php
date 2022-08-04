@@ -56,12 +56,20 @@ $hitungSulbar = ['positif' => 0, 'negatif' => 0, 'netral' => 0];
                     // calculations:
                   $scores = $sentiment->score($item->text);
                   $class = $sentiment->categorise($item->text);
+                   $imot = "";
+                  if ($class == "positif") {
+                    $imot = "<i class=\"bi bi-emoji-smile text-success\"></i>";
+                  }else if($class == "negatif"){
+                    $imot = "<i class=\"bi bi-emoji-frown text-danger\"></i>";
+                  }else {
+                    $imot = "<i class=\"bi bi-emoji-neutral text-secondary\"></i>";
+                  }
                   ?>
 
                   <!-- /Kalkulasi -->
 
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-secondary"><?= $class ?></span>
+                      <?= $imot ?>
                   </td>
                   <td class="align-middle text-center">
                     <span class="text-secondary text-xs font-weight-bold"> <?php     

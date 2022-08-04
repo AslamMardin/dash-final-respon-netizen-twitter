@@ -62,6 +62,7 @@ $(document).ready(function(){
       let date = new Date()
       let y = date.getFullYear()
       let m = date.getMonth()
+      console.log(m)
       $.ajax({
         url:"../tweet_unasman.php",
         type:"get",
@@ -71,7 +72,7 @@ $(document).ready(function(){
         },
         success:function(results){
           results = JSON.parse(results)
-          $('#hasilTweet').html(tgl+"/"+ m + "/" + y)
+          $('#hasilTweet').html(tgl)
           let table = `<table class="table" style="border:0">
           <thead>
           <tr>

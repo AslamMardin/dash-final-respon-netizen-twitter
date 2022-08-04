@@ -54,7 +54,7 @@ $datas = explode(",", $datas);
             <thead>
               <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width:10%">#</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Kosa Kata</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Kosa Kata </th>
               </tr>
             </thead>
             <tbody>

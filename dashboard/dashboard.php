@@ -94,7 +94,7 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
     <div class="card">
       <div class="card-header p-3 pt-2">
         <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-          <i class="bi bi-wechat"></i>
+        <i class="bi bi-emoji-frown"></i>
 
         </div>
         <div class="text-end pt-1">
@@ -112,7 +112,7 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
     <div class="card">
       <div class="card-header p-3 pt-2">
         <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-         <i class="bi bi-chat-left-heart-fill"></i>
+        <i class="bi bi-emoji-smile"></i>
        </div>
        <div class="text-end pt-1">
         <p class="text-sm mb-0 text-capitalize">Respon Positif</p>
@@ -129,7 +129,7 @@ $totalNegatif = (int) ($hitungUnasman['negatif']) + ($hitungPolewali['negatif'])
   <div class="card">
     <div class="card-header p-3 pt-2">
       <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-       <i class="bi bi-chat-left"></i>
+      <i class="bi bi-emoji-neutral"></i>
      </div>
      <div class="text-end pt-1">
       <p class="text-sm mb-0 text-capitalize">Netral</p>
