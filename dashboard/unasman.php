@@ -54,8 +54,9 @@ $hitungSulbar = ['positif' => 0, 'negatif' => 0, 'netral' => 0];
                   <!-- Kalkulasi -->
                   <?php 
                     // calculations:
+                  $kalimat = preProcessing($item->text);
                   $scores = $sentiment->score($item->text);
-                  $class = $sentiment->categorise($item->text);
+                  $class = $sentiment->categorise($kalimat);
                    $imot = "";
                   if ($class == "positif") {
                     $imot = "<i class=\"bi bi-emoji-smile text-success\"></i>";
