@@ -33,8 +33,7 @@ $(document).ready(function(){
   // End Function Abmil Data
 
   ambilData("../db_unasman.php", "unasman");
-  ambilData("../db_polewali.php", "polewali");
-  ambilData("../db_sulbar.php", "sulbar");
+
 
 
   function table(name, results)
@@ -106,88 +105,87 @@ $(document).ready(function(){
 
 // My Chart
 const myChart = (data, name) => {
- var ctx3 = document.getElementById("chart-"+ name).getContext("2d");
+ var ctx3 = document.getElementById("chart-unasman").getContext("2d");
 
- new Chart(ctx3, {
-  type: "line",
-  data: {
-    labels: data.p,
-    datasets: [{
-      label: "Diagram " + name,
-      tension: 0,
-      borderWidth: 0,
-      pointRadius: 5,
-      pointBackgroundColor: "rgba(255, 255, 255, .8)",
-      pointBorderColor: "transparent",
-      borderColor: "rgba(255, 255, 255, .8)",
-      borderWidth: 4,
-      backgroundColor: "transparent",
-      fill: true,
-      data: data.v,
-      maxBarThickness: 6
+    new Chart(ctx3, {
+      type: "line",
+      data: {
+        labels: data.p,
+        datasets: [{
+          label: "Unasmna",
+          tension: 0,
+          borderWidth: 0,
+          pointRadius: 6,
+          pointBackgroundColor: "rgba(255, 255, 255, .8)",
+          pointBorderColor: "transparent",
+          borderColor: "rgba(124, 124, 124, .8)",
+          borderWidth: 4,
+          backgroundColor: "transparent",
+          fill: true,
+          data: data.v,
+          maxBarThickness: 6
 
-    }],
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        display: false,
-      }
-    },
-    interaction: {
-      intersect: false,
-      mode: 'index',
-    },
-    scales: {
-      y: {
-        grid: {
-          drawBorder: false,
-          display: true,
-          drawOnChartArea: true,
-          drawTicks: false,
-          borderDash: [5, 5],
-          color: 'rgba(255, 255, 255, .2)'
-        },
-        ticks: {
-          display: true,
-          padding: 10,
-          color: '#f8f9fa',
-          font: {
-            size: 14,
-            weight: 300,
-            family: "Roboto",
-            style: 'normal',
-            lineHeight: 2
-          },
-        }
+        }],
       },
-      x: {
-        grid: {
-          drawBorder: false,
-          display: false,
-          drawOnChartArea: false,
-          drawTicks: false,
-          borderDash: [5, 5]
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+          }
         },
-        ticks: {
-          display: true,
-          color: '#f8f9fa',
-          padding: 10,
-          font: {
-            size: 14,
-            weight: 300,
-            family: "Roboto",
-            style: 'normal',
-            lineHeight: 2
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5],
+              color: 'rgba(255, 255, 255, .2)'
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#fff',
+              font: {
+                size: 14,
+                weight: 700,
+                family: "Roboto",
+                style: 'bold',
+                lineHeight: 2
+              },
+            }
           },
-        }
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#fff',
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 7000,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
       },
-    },
-  },
-});
-
+    });
 }
     // end Code
   });
